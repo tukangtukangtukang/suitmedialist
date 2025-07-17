@@ -3,7 +3,7 @@ import PostList from './components/PostList';
 
 export default function Home() {
   return (
-    <main>
+    <main className="bg-white min-h-screen">
       <Banner />
       <section className="max-w-5xl mx-auto px-4 py-8">
         <PostList />

@@ -7,6 +7,8 @@ const BANNER_HEIGHT = 400;
 export default function Banner() {
   const [offset, setOffset] = useState(0);
   const bannerRef = useRef<HTMLDivElement>(null);
+  const FALLBACK_IMAGE = "/anna-stampfli-pUCxfCJ3xEE-unsplash.jpg";
+  const [bannerUrl, setBannerUrl] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,16 +38,18 @@ export default function Banner() {
         }}
       >
         <Image
-          src="/anna-stampfli-pUCxfCJ3xEE-unsplash.jpg"
+          src={bannerUrl || FALLBACK_IMAGE}
           alt="Banner"
           fill
-          style={{ objectFit: "cover" }}
+          className="object-cover"
           priority
         />
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40" />
       </div>
       {/* Teks dengan parallax lebih cepat */}
       <div
-        className="absolute left-1/2 top-1/2 z-10 text-white text-4xl font-bold drop-shadow-lg select-none"
+        className="absolute left-1/2 top-1/2 z-10 text-white text-5xl font-extrabold drop-shadow-2xl select-none text-center"
         style={{
           transform: `translate(-50%, calc(-50% + ${offset * 0.6}px))`,
           transition: "transform 0.1s linear",
