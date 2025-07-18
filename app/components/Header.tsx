@@ -4,9 +4,12 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const MENU = [
-  { name: 'Home', href: '/' },
+  { name: 'Work', href: '/work' },
+  { name: 'About', href: '/about' },
+  { name: 'Services', href: '/services' },
   { name: 'Ideas', href: '/ideas' },
-  // Tambahkan menu lain jika perlu
+  { name: 'Careers', href: '/careers' },
+  { name: 'Contact', href: '/contact' },
 ];
 
 export default function Header() {
@@ -38,31 +41,30 @@ export default function Header() {
   }, [lastScrollY]);
 
   return (
-    <header
-      className={`fixed top-0 left-0 w-full z-50 transition-transform duration-300
-        ${show ? 'translate-y-0 bg-white/80 backdrop-blur-md shadow-xl' : '-translate-y-full'}
-      `}
-      style={{ WebkitBackdropFilter: 'blur(12px)' }}
-    >
-      <nav className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
-        <div className="font-extrabold text-2xl tracking-tight text-blue-700">Suitmedia</div>
-        <ul className="flex gap-8">
-          {MENU.map((item) => (
-            <li key={item.href}>
-              <Link
-                href={item.href}
-                className={`px-3 py-2 rounded-lg transition-colors duration-200 text-base
-                  ${pathname === item.href
-                    ? 'bg-blue-600 text-white font-bold shadow underline underline-offset-4'
-                    : 'text-gray-700 hover:bg-blue-100 hover:text-blue-700'}
-                `}
-              >
-                {item.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </header>
+      <header
+    className={`fixed top-0 left-0 w-full z-50 transition-transform duration-300
+      ${show ? 'translate-y-0 bg-[#AF3E3E]/90 backdrop-blur-md shadow-xl' : '-translate-y-full'}
+    `}
+  >
+    <nav className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+      <div className="font-extrabold text-2xl tracking-tight text-[#EAEBD0]">Suitmedia</div>
+      <ul className="flex gap-8">
+        {MENU.map((item) => (
+          <li key={item.href}>
+            <Link
+              href={item.href}
+              className={`px-3 py-2 rounded-lg transition-colors duration-200 text-base
+                ${pathname === item.href
+                  ? 'bg-[#CD5656] text-[#EAEBD0] font-bold shadow underline underline-offset-4'
+                  : 'text-[#EAEBD0] hover:bg-[#DA6C6C] hover:text-[#EAEBD0]'}
+              `}
+            >
+              {item.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </header>
   );
 }

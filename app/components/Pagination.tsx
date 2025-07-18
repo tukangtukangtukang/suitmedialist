@@ -40,7 +40,7 @@ export default function Pagination({ page, totalPages, onPageChange }: Paginatio
           <button
             key={p}
             className={`px-3 py-1 rounded-lg border transition-colors duration-150 font-medium
-              ${p === page ? 'bg-blue-600 text-white shadow-md' : 'bg-white text-gray-700 hover:bg-blue-100'}
+              ${p === page ? 'bg-[#CD5656] text-[#EAEBD0] shadow-md' : 'bg-white text-[#AF3E3E] border-[#DA6C6C] hover:bg-[#DA6C6C] hover:text-[#EAEBD0]'}
             `}
             onClick={() => onPageChange(p)}
             disabled={p === page}
