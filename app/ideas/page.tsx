@@ -1,5 +1,9 @@
 import Banner from '../components/Banner';
 import PostList from '../components/PostList';
+export const metadata = {
+    title: "Ideas | Suitmedia",
+    description: "Ideas page of Suitmedia",
+  };
 
 export default function Home() {
   return (

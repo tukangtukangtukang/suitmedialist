@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Careers | Suitmedia",
+  description: "Careers page of Suitmedia",
+};
+
 export default function CareersPage() {
   return (
     <main className="bg-[#EAEBD0] min-h-screen flex items-center justify-center">

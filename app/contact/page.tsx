@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Contact | Suitmedia",
+  description: "Contact page of Suitmedia",
+};
+
 export default function ContactPage() {
   return (
     <main className="bg-[#EAEBD0] min-h-screen flex items-center justify-center">

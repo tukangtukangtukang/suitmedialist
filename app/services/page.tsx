@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Services | Suitmedia",
+  description: "Services page of Suitmedia",
+};
+
 export default function ServicesPage() {
   return (
     <main className="bg-[#EAEBD0] min-h-screen flex items-center justify-center">
